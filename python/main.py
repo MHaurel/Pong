@@ -87,11 +87,18 @@ def main():
 
         # Right player lose
         if left_player.score == 5:
-            print("Left player won !!")
+            right_player.lost = True
+            lost_count += 1
+            ball.vel = 0
 
         # Left player lose
         elif right_player.score == 5:
-            print("Right player won !!")
+            left_player.lost = True
+            lost_count += 1
+            ball.vel = 0
+
+        if right_player.lost or left_player.lost:
+            run = False
 
         if right_player.y < ball.y < (right_player.y + right_player.height):
             if ball.x + (ball.vel * x_facing) > right_player.x:

@@ -9,6 +9,7 @@ class Player:
         self.height = 100
         self.vel = 10
         self.score = 0
+        self.lost = False
 
     def draw(self, window):
         pygame.draw.rect(window, (255, 255, 255), (self.x, self.y, self.width, self.height))
